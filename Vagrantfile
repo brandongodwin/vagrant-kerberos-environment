@@ -7,8 +7,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define "dc" do |dc|
-    dc.vm.box = "vivid64"
-    dc.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/vivid/current/vivid-server-cloudimg-amd64-vagrant-disk1.box"
+    dc.vm.box = "ubuntu/vivid64"
     
     dc.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
     
@@ -32,8 +31,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     
     client.vm.network "private_network", ip: "192.168.50.5", virtualbox__intnet: "active_directory_network"
     
-    config.vm.provision "shell", path: "configure-dns.bat"
-    config.vm.provision "shell", path: "join-domain.ps1"
+    client.vm.provision "shell", path: "configure-dns.bat"
+    client.vm.provision "shell", path: "join-domain.ps1"
   end
 
 end

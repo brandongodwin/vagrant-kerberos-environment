@@ -25,6 +25,8 @@ You can setup a sample Spring application to test the environment.
 	sudo chown vagrant:vagrant spring-sample.keytab
 	```
 	
+	If you get an error stating `Key table entry not found`, try removing the `@TESTDOMAIN.LAN` from the two commands.
+	
 3. Create a new `application.yml` with these contents:
 
 	```
