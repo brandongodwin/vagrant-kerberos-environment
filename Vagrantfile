@@ -7,7 +7,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define "dc" do |dc|
-    dc.vm.box = "ubuntu/vivid64"
+    dc.vm.box = "ubuntu/trusty64"
     
     dc.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
     
